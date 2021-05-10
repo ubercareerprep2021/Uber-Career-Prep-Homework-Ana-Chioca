@@ -190,6 +190,25 @@ LIST* reverseListStack(LIST* list){
     return revList;
 }
 
+void reverseListRecursive_recursion(LIST* rev, NODE* n){
+    NODE* newNode;
+    if (n == NULL) return;
+    reverseListRecursive_recursion(rev, n->next);
+
+    newNode = createNode(n->item);
+    push(newNode, rev);
+}
+
+LIST* reverseListRecursive(LIST* list){
+    if (list == NULL) return NULL;
+    LIST* revList = createList();
+    if (size(list) == 0) return revList;
+
+    reverseListRecursive_recursion(revList, list->head->next);
+
+    return revList;
+}
+
 void printList(LIST* l){
     if (l != NULL){
         NODE* aux = l->head->next;

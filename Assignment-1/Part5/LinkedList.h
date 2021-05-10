@@ -15,6 +15,7 @@
     uint size(LIST* l);
     LIST* reverseListIterative(LIST* list);
     LIST* reverseListStack(LIST* list);
+    LIST* reverseListRecursive(LIST* list);
     void printList(LIST* l);
     void printNode(NODE* n);
     void destroyList(LIST* l);

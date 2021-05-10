@@ -23,15 +23,25 @@ int main(){
     n = createNode(12);
     insertAt(n, list, size(list));
 
+    printf("Initial list: ");
     printList(list);
 
+    printf("\nReversed list - Iterative method: ");
     LIST* revListIt = reverseListIterative(list);
     printList(revListIt);
 
+    printf("\nReversed list - Stack method: ");
     LIST* revListStack = reverseListStack(list);
     printList(revListStack);
+
+    printf("\nReversed list - Recursive method: ");
+    LIST* revListRecursive = reverseListRecursive(list);
+    printList(revListRecursive);
 
     destroyList(list);
     destroyList(revListIt);
     destroyList(revListStack);
+    destroyList(revListRecursive);
+
+    return 0;
 }
